@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  background-color: #eee;
+  font: 12px arial,helvetica,clean,sans-serif;
+}
+
+.tournament {
+  width: 100%;
+  display: flex;
+}
+
+.tournament .bracket-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tournament .bracket-section.middle-section {
+  width: 20%;
+  background-color: #eee;
+}
+
+.tournament .bracket-section.left-section,
+.tournament .bracket-section.right-section {
+  width: 40%;
+}
+
+.tournament .bracket-section.right-section {
+  flex-direction: row-reverse;
+}
+
+.tournament .bracket-round {
+  width: 100%;
+  max-width: 250px;
+  opacity: .4;
+}
+
+.tournament .bracket-round.current-round {
+  opacity: 1;
+  font-size: 14px;
+}
+
+.tournament .round-header {
+  text-align: center;
+  margin: 10px;
+}
+
+.tournament .round-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tournament .round-matches {
+  width: 100%;
+}
+
+.tournament .round-match {
+  background-color: #fff;
+  list-style-type: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(90, 90, 90, 0.2);
+  -moz-box-shadow:    0px 0px 4px 0px rgba(90, 90, 90, 0.2);
+  box-shadow:         0px 0px 4px 0px rgba(90, 90, 90, 0.2);
+  padding: 0;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.tournament .round-opponent {
+  padding: 10px;
+  position: relative;
+}
+
+.tournament .round-opponent .rank {
+  font-size: 10px;
+  position: absolute;
+  right: -15px;
+  top: 45%;
+  width: 10px;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tournament li.round-opponent:first-child {
+  border-bottom: 1px dotted #ccc;
+}
+
+.tournament .opponent-info {
+  display: flex;
+  height: 30px;
+}
+
+.tournament .bracket-section.middle-section li.round-opponent:last-child .opponent-info,
+.tournament .bracket-section.right-section .opponent-info {
+  flex-direction: row-reverse;
+}
+
+.tournament .opponent-name {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.tournament .opponent-avatar {
+  padding: 5px
+  width: 30px;
+  height: 30px;
+}
