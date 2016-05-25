@@ -3,19 +3,19 @@ import React from 'react'
 export default class Tournament extends React.Component {
   render() {
     let roundsPerSection = (section, rounds) => {
-      return rounds.map(({ title, active, matches }) => {
+      return rounds.map(({ index, active, matches }) => {
         return {
-          title: title,
-          active: active,
-          matches: matches.filter(match => match.section == section)
+          index,
+          active,
+          matches: matches.filter(match => match.sections.includes(section))
         }
       })
     }
 
     let totalRounds = this.props.rounds.length
-    let leftSectionRounds = roundsPerSection(0, this.props.rounds).slice(0, totalRounds-1)
+    let leftSectionRounds = roundsPerSection('left', this.props.rounds).slice(0, totalRounds-1)
     let middleSectionRounds = [this.props.rounds[totalRounds - 1]]
-    let rightSectionRounds = roundsPerSection(2, this.props.rounds).slice(0, totalRounds-1)
+    let rightSectionRounds = roundsPerSection('right', this.props.rounds).slice(0, totalRounds-1)
 
     return (
       <div className="tournament">
@@ -46,14 +46,22 @@ const TournamentSection = (props) => {
  * props.round: Round
  */
 const TournamentRound = (props) => {
-  let matches = props.round.matches.map((match, i) => <RoundMatch key={i} match={match} />)
-  let className = props.round.active ? 'bracket-round current-round' : 'bracket-round'
+  let topMatches = props.round.matches.filter(match => match.sections.includes('top')).map((match, i) => <RoundMatch key={i} match={match} />)
+  let bottomMatches = props.round.matches.filter(match => match.sections.includes('bottom')).map((match, i) => <RoundMatch key={i} match={match} />)
+
+  let bracketRoundClasses = props.round.active ? 'bracket-round current-round' : 'bracket-round'
+  let roundBodyClasses = `round-body round-${props.round.index}`
+
   return (
-    <div className={className}>
-      <div className="round-header"><span className="title">{props.round.title}</span></div>
-      <div className="round-body">
-        <div className="round-matches">
-          {matches}
+    <div className={bracketRoundClasses}>
+      <div className="round-header"><span className="title">Round {props.round.index}</span></div>
+      <div className={roundBodyClasses}>
+        <div className="top-section">
+          {topMatches}
+        </div>
+
+        <div className="bottom-section">
+          {bottomMatches}
         </div>
       </div>
     </div>
@@ -65,6 +73,7 @@ const TournamentRound = (props) => {
  */
 const RoundMatch = (props) => {
   let opponents = props.match.opponents.map((opponent, i) => <MatchOpponent key={i} opponent={opponent} />)
+
   return (
     <ul className="round-match">
       {opponents}
@@ -82,7 +91,6 @@ const MatchOpponent = (props) => {
         <div className="opponent-name">{props.opponent.name}</div>
         <img className="opponent-avatar" src={props.opponent.avatarURL} />
       </div>
-      <div className="rank">{props.opponent.rank}</div>
     </li>
   )
 }
