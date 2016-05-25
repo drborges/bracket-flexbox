@@ -7,14 +7,15 @@ let uuid = (function *gen() {
 })()
 
 let avatarURL = (id) => id % 2 == 0 ? 'http://localhost:3333/opponent1.jpg' : 'http://localhost:3333/opponent2.jpg'
-let opponentFactory = (id) => {
-  return { id: id, name: `Charles Curcio ${id}`, avatarURL: avatarURL(id), rank: 1 }
+let createOpponent = (id, bracket) => {
+  return { id: id, name: `Charles Curcio ${id}`, avatarURL: avatarURL(id), rank: 1, bracket: bracket }
 }
-let matchFactory = (sections) => {
+
+let matchFactory = (sections, bracket) => {
   let id = uuid.next().value
   return {
     sections: sections,
-    opponents: [ opponentFactory(id), opponentFactory(id)]
+    opponents: [ createOpponent(id, bracket), createOpponent(id, bracket)]
   }
 }
 
