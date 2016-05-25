@@ -6,15 +6,27 @@
     <style media="screen">
 
     body {
-      background-color: #ccc;
+      background-color: #f5f5f5;
+      font-family: sans-serif;
+      font-size: 12px;
+    }
+
+    
+
+    .flex-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
     }
 
     .competitor {
       margin: 3px;
+      padding: 5px;
+      border-radius: 3px;
       background-color: #fff;
     }
 
-    .tournament, .division, .region, .round {
+    .tournament, .division, .region, .round, .finals {
       display: flex;
     }
 
@@ -27,198 +39,234 @@
       justify-content: space-around;
     }
 
-    .region {
-      flex-direction: row;
-    }
-
     .northeast, .southeast {
       flex-direction: row-reverse;
     }
 
-    .round:first-child .competitor:nth-child(odd) {
+    .region .round:first-child .competitor:nth-child(odd) {
       margin-top: 10px;
     }
 
-    .round:first-child .competitor:nth-child(even) {
+    .region .round:first-child .competitor:nth-child(even) {
       margin-bottom: 10px;
     }
 
     .competitor {
-
+      color: #fff;
     }
 
+    .northwest .competitor {
+      background-color: #004976;
+    }
+
+    .northeast .competitor {
+      background-color: #daaa00;
+    }
+
+    .southwest .competitor {
+      background-color: #00a3e0;
+    }
+
+    .southeast .competitor {
+      background-color: #f9423a;
+    }
     </style>
   </head>
   <body>
-    <div class="tournament">
+    <div class="flex-container">
+      <div class="tournament">
 
-      <div class="western division">
-        <div class="northwest region">
-          <div class="round">
-            <div class="competitor">Northwest User 1</div>
-            <div class="competitor">Northwest User 2</div>
-            <div class="competitor">Northwest User 3</div>
-            <div class="competitor">Northwest User 4</div>
-            <div class="competitor">Northwest User 5</div>
-            <div class="competitor">Northwest User 6</div>
-            <div class="competitor">Northwest User 7</div>
-            <div class="competitor">Northwest User 8</div>
-            <div class="competitor">Northwest User 9</div>
-            <div class="competitor">Northwest User 10</div>
-            <div class="competitor">Northwest User 11</div>
-            <div class="competitor">Northwest User 12</div>
-            <div class="competitor">Northwest User 13</div>
-            <div class="competitor">Northwest User 14</div>
-            <div class="competitor">Northwest User 15</div>
-            <div class="competitor">Northwest User 16</div>
+        <div class="western division">
+          <div class="northwest region">
+            <div class="round">
+              <div class="competitor">Northwest User 1</div>
+              <div class="competitor">Northwest User 2</div>
+              <div class="competitor">Northwest User 3</div>
+              <div class="competitor">Northwest User 4</div>
+              <div class="competitor">Northwest User 5</div>
+              <div class="competitor">Northwest User 6</div>
+              <div class="competitor">Northwest User 7</div>
+              <div class="competitor">Northwest User 8</div>
+              <div class="competitor">Northwest User 9</div>
+              <div class="competitor">Northwest User 10</div>
+              <div class="competitor">Northwest User 11</div>
+              <div class="competitor">Northwest User 12</div>
+              <div class="competitor">Northwest User 13</div>
+              <div class="competitor">Northwest User 14</div>
+              <div class="competitor">Northwest User 15</div>
+              <div class="competitor">Northwest User 16</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northwest User 1</div>
+              <div class="competitor">Northwest User 2</div>
+              <div class="competitor">Northwest User 3</div>
+              <div class="competitor">Northwest User 4</div>
+              <div class="competitor">Northwest User 5</div>
+              <div class="competitor">Northwest User 6</div>
+              <div class="competitor">Northwest User 7</div>
+              <div class="competitor">Northwest User 8</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northwest User 1</div>
+              <div class="competitor">Northwest User 2</div>
+              <div class="competitor">Northwest User 3</div>
+              <div class="competitor">Northwest User 4</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northwest User 1</div>
+              <div class="competitor">Northwest User 2</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+            </div>
           </div>
-          <div class="round">
-            <div class="competitor">Northwest User 1</div>
-            <div class="competitor">Northwest User 2</div>
-            <div class="competitor">Northwest User 3</div>
-            <div class="competitor">Northwest User 4</div>
-            <div class="competitor">Northwest User 5</div>
-            <div class="competitor">Northwest User 6</div>
-            <div class="competitor">Northwest User 7</div>
-            <div class="competitor">Northwest User 8</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Northwest User 1</div>
-            <div class="competitor">Northwest User 2</div>
-            <div class="competitor">Northwest User 3</div>
-            <div class="competitor">Northwest User 4</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Northwest User 1</div>
-            <div class="competitor">Northwest User 2</div>
-          </div>
-        </div>
-        <div class="southwest region">
-          <div class="round">
-            <div class="competitor">Southwest User 1</div>
-            <div class="competitor">Southwest User 2</div>
-            <div class="competitor">Southwest User 3</div>
-            <div class="competitor">Southwest User 4</div>
-            <div class="competitor">Southwest User 5</div>
-            <div class="competitor">Southwest User 6</div>
-            <div class="competitor">Southwest User 7</div>
-            <div class="competitor">Southwest User 8</div>
-            <div class="competitor">Southwest User 9</div>
-            <div class="competitor">Southwest User 10</div>
-            <div class="competitor">Southwest User 11</div>
-            <div class="competitor">Southwest User 12</div>
-            <div class="competitor">Southwest User 13</div>
-            <div class="competitor">Southwest User 14</div>
-            <div class="competitor">Southwest User 15</div>
-            <div class="competitor">Southwest User 16</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southwest User 1</div>
-            <div class="competitor">Southwest User 2</div>
-            <div class="competitor">Southwest User 3</div>
-            <div class="competitor">Southwest User 4</div>
-            <div class="competitor">Southwest User 5</div>
-            <div class="competitor">Southwest User 6</div>
-            <div class="competitor">Southwest User 7</div>
-            <div class="competitor">Southwest User 8</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southwest User 1</div>
-            <div class="competitor">Southwest User 2</div>
-            <div class="competitor">Southwest User 3</div>
-            <div class="competitor">Southwest User 4</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southwest User 1</div>
-            <div class="competitor">Southwest User 2</div>
-          </div>
-        </div>
-      </div>
-      <div class="finals"></div>
-      <div class="eastern division">
-        <div class="northeast region">
-          <div class="round">
-            <div class="competitor">Northeast User 1</div>
-            <div class="competitor">Northeast User 2</div>
-            <div class="competitor">Northeast User 3</div>
-            <div class="competitor">Northeast User 4</div>
-            <div class="competitor">Northeast User 5</div>
-            <div class="competitor">Northeast User 6</div>
-            <div class="competitor">Northeast User 7</div>
-            <div class="competitor">Northeast User 8</div>
-            <div class="competitor">Northeast User 9</div>
-            <div class="competitor">Northeast User 10</div>
-            <div class="competitor">Northeast User 11</div>
-            <div class="competitor">Northeast User 12</div>
-            <div class="competitor">Northeast User 13</div>
-            <div class="competitor">Northeast User 14</div>
-            <div class="competitor">Northeast User 15</div>
-            <div class="competitor">Northeast User 16</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Northeast User 1</div>
-            <div class="competitor">Northeast User 2</div>
-            <div class="competitor">Northeast User 3</div>
-            <div class="competitor">Northeast User 4</div>
-            <div class="competitor">Northeast User 5</div>
-            <div class="competitor">Northeast User 6</div>
-            <div class="competitor">Northeast User 7</div>
-            <div class="competitor">Northeast User 8</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Northeast User 1</div>
-            <div class="competitor">Northeast User 2</div>
-            <div class="competitor">Northeast User 3</div>
-            <div class="competitor">Northeast User 4</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Northeast User 1</div>
-            <div class="competitor">Northeast User 2</div>
+          <div class="southwest region">
+            <div class="round">
+              <div class="competitor">Southwest User 1</div>
+              <div class="competitor">Southwest User 2</div>
+              <div class="competitor">Southwest User 3</div>
+              <div class="competitor">Southwest User 4</div>
+              <div class="competitor">Southwest User 5</div>
+              <div class="competitor">Southwest User 6</div>
+              <div class="competitor">Southwest User 7</div>
+              <div class="competitor">Southwest User 8</div>
+              <div class="competitor">Southwest User 9</div>
+              <div class="competitor">Southwest User 10</div>
+              <div class="competitor">Southwest User 11</div>
+              <div class="competitor">Southwest User 12</div>
+              <div class="competitor">Southwest User 13</div>
+              <div class="competitor">Southwest User 14</div>
+              <div class="competitor">Southwest User 15</div>
+              <div class="competitor">Southwest User 16</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southwest User 1</div>
+              <div class="competitor">Southwest User 2</div>
+              <div class="competitor">Southwest User 3</div>
+              <div class="competitor">Southwest User 4</div>
+              <div class="competitor">Southwest User 5</div>
+              <div class="competitor">Southwest User 6</div>
+              <div class="competitor">Southwest User 7</div>
+              <div class="competitor">Southwest User 8</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southwest User 1</div>
+              <div class="competitor">Southwest User 2</div>
+              <div class="competitor">Southwest User 3</div>
+              <div class="competitor">Southwest User 4</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southwest User 1</div>
+              <div class="competitor">Southwest User 2</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+            </div>
           </div>
         </div>
-        <div class="southeast region">
-          <div class="round">
-            <div class="competitor">Southeast User 1</div>
-            <div class="competitor">Southeast User 2</div>
-            <div class="competitor">Southeast User 3</div>
-            <div class="competitor">Southeast User 4</div>
-            <div class="competitor">Southeast User 5</div>
-            <div class="competitor">Southeast User 6</div>
-            <div class="competitor">Southeast User 7</div>
-            <div class="competitor">Southeast User 8</div>
-            <div class="competitor">Southeast User 9</div>
-            <div class="competitor">Southeast User 10</div>
-            <div class="competitor">Southeast User 11</div>
-            <div class="competitor">Southeast User 12</div>
-            <div class="competitor">Southeast User 13</div>
-            <div class="competitor">Southeast User 14</div>
-            <div class="competitor">Southeast User 15</div>
-            <div class="competitor">Southeast User 16</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southeast User 1</div>
-            <div class="competitor">Southeast User 2</div>
-            <div class="competitor">Southeast User 3</div>
-            <div class="competitor">Southeast User 4</div>
-            <div class="competitor">Southeast User 5</div>
-            <div class="competitor">Southeast User 6</div>
-            <div class="competitor">Southeast User 7</div>
-            <div class="competitor">Southeast User 8</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southeast User 1</div>
-            <div class="competitor">Southeast User 2</div>
-            <div class="competitor">Southeast User 3</div>
-            <div class="competitor">Southeast User 4</div>
-          </div>
-          <div class="round">
-            <div class="competitor">Southeast User 1</div>
-            <div class="competitor">Southeast User 2</div>
-          </div>
-        </div>
-      </div>
 
+
+        <div class="finals">
+          <div class="semifinalist round"><div class="competitor">Southwest User 1</div></div>
+          <div class="winner round">
+            <div class="logo">LOGO...</div>
+            <div class="competitor">Very long Winner name...</div>
+            <div class="space"></div>
+          </div>
+          <div class="semifinalist round"><div class="competitor">Southwest User 3</div></div>
+        </div>
+
+
+        <div class="eastern division">
+          <div class="northeast region">
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+              <div class="competitor">Northeast User 2</div>
+              <div class="competitor">Northeast User 3</div>
+              <div class="competitor">Northeast User 4</div>
+              <div class="competitor">Northeast User 5</div>
+              <div class="competitor">Northeast User 6</div>
+              <div class="competitor">Northeast User 7</div>
+              <div class="competitor">Northeast User 8</div>
+              <div class="competitor">Northeast User 9</div>
+              <div class="competitor">Northeast User 10</div>
+              <div class="competitor">Northeast User 11</div>
+              <div class="competitor">Northeast User 12</div>
+              <div class="competitor">Northeast User 13</div>
+              <div class="competitor">Northeast User 14</div>
+              <div class="competitor">Northeast User 15</div>
+              <div class="competitor">Northeast User 16</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+              <div class="competitor">Northeast User 2</div>
+              <div class="competitor">Northeast User 3</div>
+              <div class="competitor">Northeast User 4</div>
+              <div class="competitor">Northeast User 5</div>
+              <div class="competitor">Northeast User 6</div>
+              <div class="competitor">Northeast User 7</div>
+              <div class="competitor">Northeast User 8</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+              <div class="competitor">Northeast User 2</div>
+              <div class="competitor">Northeast User 3</div>
+              <div class="competitor">Northeast User 4</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+              <div class="competitor">Northeast User 2</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+            </div>
+          </div>
+          <div class="southeast region">
+            <div class="round">
+              <div class="competitor">Southeast User 1</div>
+              <div class="competitor">Southeast User 2</div>
+              <div class="competitor">Southeast User 3</div>
+              <div class="competitor">Southeast User 4</div>
+              <div class="competitor">Southeast User 5</div>
+              <div class="competitor">Southeast User 6</div>
+              <div class="competitor">Southeast User 7</div>
+              <div class="competitor">Southeast User 8</div>
+              <div class="competitor">Southeast User 9</div>
+              <div class="competitor">Southeast User 10</div>
+              <div class="competitor">Southeast User 11</div>
+              <div class="competitor">Southeast User 12</div>
+              <div class="competitor">Southeast User 13</div>
+              <div class="competitor">Southeast User 14</div>
+              <div class="competitor">Southeast User 15</div>
+              <div class="competitor">Southeast User 16</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southeast User 1</div>
+              <div class="competitor">Southeast User 2</div>
+              <div class="competitor">Southeast User 3</div>
+              <div class="competitor">Southeast User 4</div>
+              <div class="competitor">Southeast User 5</div>
+              <div class="competitor">Southeast User 6</div>
+              <div class="competitor">Southeast User 7</div>
+              <div class="competitor">Southeast User 8</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southeast User 1</div>
+              <div class="competitor">Southeast User 2</div>
+              <div class="competitor">Southeast User 3</div>
+              <div class="competitor">Southeast User 4</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Southeast User 1</div>
+              <div class="competitor">Southeast User 2</div>
+            </div>
+            <div class="round">
+              <div class="competitor">Northeast User 1</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-
   </body>
 </html>
